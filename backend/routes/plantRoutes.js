@@ -4,6 +4,6 @@ const {getPlants, addPlant, updatePlant, deletePlant} = require('../controllers/
 
 router.route('/').get(getPlants).post(addPlant)
 
-router.route('/:id').put(updatePlant).delete(deletePlant)
+//router.route('/:id').put(updatePlant).delete(deletePlant)
 
 module.exports = router
