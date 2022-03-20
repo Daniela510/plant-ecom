@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const {getPlants, addPlant, updatePlant, deletePlant} = require('../controllers/plantsController')
+const {getPlants, addPlant} = require('../controllers/plantsController')
 
 router.route('/').get(getPlants).post(addPlant)
 
