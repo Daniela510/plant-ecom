@@ -1,9 +1,9 @@
-const express = require("express")
+import express from 'express'
 const router = express.Router()
-const {getPlants, addPlant} = require('../controllers/plantsController')
+import {getPlants, addPlant, updatePlant, deletePlant} from '../controllers/plantsController.js'
 
 router.route('/').get(getPlants).post(addPlant)
 
-//router.route('/:id').put(updatePlant).delete(deletePlant)
+router.route('/:id').put(updatePlant).delete(deletePlant)
 
-module.exports = router
+export default router
