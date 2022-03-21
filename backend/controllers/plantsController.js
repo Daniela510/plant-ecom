@@ -2,22 +2,18 @@ import asyncHandler from 'express-async-handler'
 
 import Plants from "../models/plantModel.js"
 
-// @desc Get goals 
-// @route GET /api/goals
+// @desc Get plants 
+// @route GET /api/plants
 //access Private
 const getPlants = asyncHandler(async (req, res) => {
     const plants = await Plants.find()
     res.status(200).json(plants)
 })
 
-// @desc Set goals 
-// @route POST /api/goals
+// @desc Add plant 
+// @route POST /api/plants
 //access Private
 const addPlant = asyncHandler(async (req, res) => {
-    if(!req.body.name) {
-        res.status(400)
-        throw new Error("Please add a text field")
-    }
     const plant = await Plants.create({
         name: req.body.name,
         genus: req.body.genus,
@@ -34,8 +30,8 @@ const addPlant = asyncHandler(async (req, res) => {
     res.status(200).json(plant)
 })
 
-// @desc Update goal
-// @route PUT /api/goals/:id
+// @desc Update plant
+// @route PUT /api/plants/:id
 //access Private
 const updatePlant = asyncHandler(async (req, res) => {
     const plant = await Plants.findById(req.params.id)
@@ -49,8 +45,8 @@ const updatePlant = asyncHandler(async (req, res) => {
     res.status(200).json(updatedPlant)
 })
 
-// @desc Delete goal
-// @route DELETE /api/goals/:id
+// @desc Delete plant
+// @route DELETE /api/plants/:id
 //access Private
 const deletePlant = asyncHandler(async (req, res) => {
     const plant = await Plants.findById(req.params.id)

@@ -5,6 +5,7 @@ import connectDB from "./config/db.js"
 const port = process.env.PORT || 5000
 
 import plantRoutes from "./routes/plantRoutes.js"
+import userRoutes from "./routes/userRoutes.js"
 import {errorHandler} from './middlware/errorMiddleware.js'
 
 connectDB()
@@ -16,5 +17,5 @@ app.use(express.urlencoded({extended:false}))
 app.use(errorHandler)
 
 app.use('/api/plants', plantRoutes)
-//app.use('/api/users', require('./routes/userRoutes'))
+app.use('/api/users', userRoutes)
 app.listen(port, () => console.log(`Server started on port ${port}`) )
