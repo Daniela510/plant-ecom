@@ -4,7 +4,7 @@ import Plants from "../models/plantModel.js"
 
 // @desc Get plants 
 // @route GET /api/plants
-//access Private
+// access Public
 const getPlants = asyncHandler(async (req, res) => {
     const plants = await Plants.find()
     res.status(200).json(plants)
@@ -12,7 +12,7 @@ const getPlants = asyncHandler(async (req, res) => {
 
 // @desc Add plant 
 // @route POST /api/plants
-//access Private
+// access Admin
 const addPlant = asyncHandler(async (req, res) => {
     const plant = await Plants.create({
         name: req.body.name,
@@ -32,7 +32,7 @@ const addPlant = asyncHandler(async (req, res) => {
 
 // @desc Update plant
 // @route PUT /api/plants/:id
-//access Private
+// access Admin
 const updatePlant = asyncHandler(async (req, res) => {
     const plant = await Plants.findById(req.params.id)
     if(!plant){
@@ -47,7 +47,7 @@ const updatePlant = asyncHandler(async (req, res) => {
 
 // @desc Delete plant
 // @route DELETE /api/plants/:id
-//access Private
+// access Admin
 const deletePlant = asyncHandler(async (req, res) => {
     const plant = await Plants.findById(req.params.id)
     if(!plant){

@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add password']
     },
-    admin: {
+    isAdmin: {
         type: Boolean,
     },
     fave: {
