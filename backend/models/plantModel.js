@@ -40,6 +40,10 @@ const plantSchema = mongoose.Schema({
         type: Number,
         required: [true, 'Please add overall care difficulty out of 5']
     },
+    price: {
+        type: Number,
+        required: [true, 'Please add price']
+    },
     image: {
         type: String,
         required: [true, 'Please add image url']

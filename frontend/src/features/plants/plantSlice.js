@@ -1,23 +1,20 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import authService from "./authService";
-
-//get user from local storage
-const user = JSON.parse(localStorage.getItem("user"));
+import plantService from "./plantService";
 
 const initialState = {
-  user: user ? user : null,
+  plants: null,
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: "",
 };
 
-//register user
-export const register = createAsyncThunk(
-  "auth/register",
-  async (user, thunkAPI) => {
+//get the plants
+export const getPlants = createAsyncThunk(
+  "plants/fetching",
+  async (thunkAPI) => {
     try {
-      return await authService.register(user);
+      return await plantService.getPlants();
     } catch (error) {
       const message =
         (error.response &&
@@ -30,8 +27,8 @@ export const register = createAsyncThunk(
   }
 );
 
-const authSlice = createSlice({
-  name: "auth",
+const plantSlice = createSlice({
+  name: "plants",
   initialState,
   reducers: {
     reset: (state) => {
@@ -43,22 +40,22 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(register.pending, (state) => {
+      .addCase(getPlants.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(register.fulfilled, (state, action) => {
+      .addCase(getPlants.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.user = action.payload;
+        state.plants = action.payload;
       })
-      .addCase(register.rejected, (state, action) => {
+      .addCase(getPlants.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-        state.user = null;
+        state.plants = null;
       });
   },
 });
 
-export const { reset } = authSlice.actions;
-export default authSlice.reducer;
+export const { reset } = plantSlice.actions;
+export default plantSlice.reducer;

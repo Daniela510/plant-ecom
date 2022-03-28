@@ -1,4 +1,5 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
 import Header from './components/Header';
 import Login from './pages/Login';
 import Main from './pages/Main';
@@ -10,6 +11,7 @@ function App() {
     <>
     <Router>
     <div>
+      <ToastContainer />
       <Header/>
       <Routes>
         <Route path='/' element ={<Main/>} />

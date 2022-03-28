@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 import { login, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
 
@@ -51,7 +51,6 @@ function Login() {
 
   return (
     <>
-    <ToastContainer/>
       <section className="heading">
         <h1>
           <FaSignInAlt /> Log in

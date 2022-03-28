@@ -36,7 +36,7 @@ const addPlant = asyncHandler(async (req, res) => {
 const updatePlant = asyncHandler(async (req, res) => {
     const plant = await Plants.findById(req.params.id)
     if(!plant){
-        res.status(400)
+        res.status(401)
         throw new Error('plant not found')
     }
     const updatedPlant = await Plants.findByIdAndUpdate(req.params.id, req .body, {
