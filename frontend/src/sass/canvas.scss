@@ -1,0 +1,15 @@
+// .p5-canvas{
+//     display: block;
+// position: sticky;
+// top:0;
+// left:0;
+// }
+canvas{
+    display:block;
+position: fixed;
+z-index: -1;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+}

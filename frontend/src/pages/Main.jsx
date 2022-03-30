@@ -26,10 +26,12 @@ function Main() {
     return <Spinner/>
   }
 
-  return <main className="main">
+  return <main id="main">
+    <div className="main">
     {plants ? (plants.map((plant) => (
         <PlantCard plant={plant} key={plant._id}/>
     ))) : (<Spinner/>)}
+    </div>
   </main>
 }
 

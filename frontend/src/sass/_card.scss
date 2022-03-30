@@ -1,6 +1,7 @@
 @use "variables" as var;
 .card{
     margin: var.$pad;
+    margin-bottom: 3rem;
     width: var.$card-width;
     &__text{
         cursor:default;

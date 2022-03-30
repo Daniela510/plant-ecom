@@ -1,5 +1,7 @@
 @use "variables" as var;
 .header {
+  width: calc(100vw - 16px);
+  position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;

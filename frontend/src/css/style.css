@@ -11,7 +11,6 @@
 }
 
 body {
-  background-color: #ebddcf;
   font-family: "Poppins", sans-serif;
   height: 100vh;
 }
@@ -25,14 +24,19 @@ a {
 }
 
 main {
-  display: flex;
+  margin-top: 5rem;
   width: calc(100vw - 16px);
+}
+
+.main {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .card {
   margin: 7px;
+  margin-bottom: 3rem;
   width: calc(33vw - 16px);
 }
 .card__text {
@@ -101,10 +105,12 @@ main {
 
 .logo {
   font-weight: 700;
-  color: #637f02;
+  color: #ebddcf;
 }
 
 .header {
+  width: calc(100vw - 16px);
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -135,6 +141,16 @@ main {
 
 .header ul li a svg {
   margin-right: 5px;
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=style.css.map */
