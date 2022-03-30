@@ -1,0 +1,15 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /*  this make the a-inner-links scroll not jump*/
+  scroll-behavior: smooth;
+}
+
+ul, li, a {
+  text-decoration: none;
+  list-style: none;
+}
+
+/*# sourceMappingURL=style.css.map */

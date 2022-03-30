@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { toast} from "react-toastify";
 import { getPlants } from "../features/plants/plantSlice";
 import Spinner from "../components/Spinner";
+import PlantCard from "../components/PlantCard";
 
 
 function Main() {
@@ -26,9 +27,7 @@ function Main() {
   }
 
   return (plants ? (plants.map((plant) => (
-      <div key={plant.name} className="plant">
-        {plant.name}
-      </div>
+        <PlantCard plant={plant} key={plant.name}/>
     ))) : (<Spinner/>)
   )
 }

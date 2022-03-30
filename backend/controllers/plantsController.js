@@ -26,6 +26,7 @@ const addPlant = asyncHandler(async (req, res) => {
         toxic: req.body.toxic,
         rating: req.body.rating,
         image: req.body.image,
+        price: req.body.price,
     })
     res.status(200).json(plant)
 })
