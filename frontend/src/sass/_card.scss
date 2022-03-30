@@ -3,7 +3,7 @@
     margin: var.$pad;
     width: var.$card-width;
     &__text{
-        cursor: pointer;
+        cursor:default;
         padding: var.$pad;
         display: flex;
         justify-content: space-evenly;

@@ -1,22 +1,37 @@
 @use "variables" as var;
 .btn {
-    margin-left: 5px;
-    padding: 1px 7px;
-    border-radius: 5px;
-    border: 2px solid var.$c-green;
-    background:var.$c-light;
-    color: var.$c-green;
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-    text-align: center;
-    appearance: button;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s ease-in-out;
-  }
-  .btn:hover{
-      background-color: var.$c-green;
-      color: var.$c-light;
-  }
+  margin-left: 5px;
+  padding: 1px 7px;
+  border-radius: 5px;
+  border: 2px solid var.$c-green;
+  background: var.$c-light;
+  color: var.$c-green;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  appearance: button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+.btn:hover {
+  background-color: var.$c-med-green;
+  border: 2px solid var.$c-med-green;
+  color: var.$c-light;
+}
+
+.btn svg {
+  margin-right: 8px;
+}
+
+.btn-reverse {
+  background: #fff;
+  color: #000;
+}
+
+.btn-block {
+  width: 100%;
+  margin-bottom: 20px;
+}

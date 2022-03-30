@@ -15,7 +15,7 @@ function Header() {
   return (
     <header className='header'>
         <div className='logo'> 
-        <Link to='/'> Plant&Plants </Link>
+        <Link to='/'> Pistache Nursery </Link>
         </div>
         <ul>
           <li>searchbar</li>

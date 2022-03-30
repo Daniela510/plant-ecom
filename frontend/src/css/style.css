@@ -5,13 +5,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ebddcf;
   /*  this make the a-inner-links scroll not jump*/
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
 body {
+  background-color: #ebddcf;
   font-family: "Poppins", sans-serif;
   height: 100vh;
 }
@@ -21,6 +21,7 @@ li,
 a {
   text-decoration: none;
   list-style: none;
+  color: inherit;
 }
 
 main {
@@ -35,7 +36,7 @@ main {
   width: calc(33vw - 16px);
 }
 .card__text {
-  cursor: pointer;
+  cursor: default;
   padding: 7px;
   display: flex;
   justify-content: space-evenly;
@@ -79,8 +80,61 @@ main {
 }
 
 .btn:hover {
-  background-color: #779708;
+  background-color: #637f02;
+  border: 2px solid #637f02;
   color: #ebddcf;
+}
+
+.btn svg {
+  margin-right: 8px;
+}
+
+.btn-reverse {
+  background: #fff;
+  color: #000;
+}
+
+.btn-block {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-weight: 700;
+  color: #637f02;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #779708;
+  border-bottom: 2px solid #779708;
+  margin-bottom: 1rem;
+}
+
+.header ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header ul li {
+  margin-left: 20px;
+}
+
+.header ul li a {
+  display: flex;
+  align-items: center;
+}
+
+.header ul li a:hover {
+  color: #777;
+}
+
+.header ul li a svg {
+  margin-right: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
