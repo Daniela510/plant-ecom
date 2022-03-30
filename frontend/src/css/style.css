@@ -1,15 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  background-color: #ebddcf;
   /*  this make the a-inner-links scroll not jump*/
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-ul, li, a {
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+ul,
+li,
+a {
   text-decoration: none;
   list-style: none;
+}
+
+main {
+  display: flex;
+  width: calc(100vw - 16px);
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  margin: 7px;
+  width: calc(33vw - 16px);
+}
+.card__text {
+  cursor: pointer;
+  padding: 7px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.card__text p:first-child {
+  font-weight: 600;
+}
+.card__text p:last-child {
+  display: flex;
+}
+
+.card img {
+  cursor: pointer;
+  padding: 7px;
+  width: calc(33vw - 16px);
+  border-radius: calc((33vw - 16px) / 2);
+  border: 2px solid #779708;
+  transition: 0.2s ease-in-out;
+}
+
+.card img:hover {
+  border-radius: 0;
+}
+
+.btn {
+  margin-left: 5px;
+  padding: 1px 7px;
+  border-radius: 5px;
+  border: 2px solid #779708;
+  background: #ebddcf;
+  color: #779708;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  appearance: button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #779708;
+  color: #ebddcf;
 }
 
 /*# sourceMappingURL=style.css.map */

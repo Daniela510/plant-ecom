@@ -26,10 +26,11 @@ function Main() {
     return <Spinner/>
   }
 
-  return (plants ? (plants.map((plant) => (
-        <PlantCard plant={plant} key={plant.name}/>
-    ))) : (<Spinner/>)
-  )
+  return <main className="main">
+    {plants ? (plants.map((plant) => (
+        <PlantCard plant={plant} key={plant._id}/>
+    ))) : (<Spinner/>)}
+  </main>
 }
 
 export default Main

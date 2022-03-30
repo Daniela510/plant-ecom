@@ -1,0 +1,28 @@
+@use "variables" as var;
+.card{
+    margin: var.$pad;
+    width: var.$card-width;
+    &__text{
+        cursor: pointer;
+        padding: var.$pad;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &__text p:first-child{
+        font-weight: 600;
+    }
+    &__text p:last-child{
+        display: flex;
+    }
+}
+.card img{
+    cursor: pointer;
+    padding: var.$pad;;
+    width: var.$card-width;
+    border-radius: var.$card-img-border;
+    border: 2px solid var.$c-green;
+    transition: 0.2s ease-in-out;
+}
+.card img:hover{
+    border-radius: 0;
+}
