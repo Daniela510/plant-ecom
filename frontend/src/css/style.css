@@ -4,6 +4,7 @@
 *::before {
   margin: 0;
   padding: 0;
+  cursor: none;
   box-sizing: border-box;
   /*  this make the a-inner-links scroll not jump*/
   scroll-behavior: smooth;
@@ -11,6 +12,8 @@
 }
 
 body {
+  cursor: none;
+  background-color: #ebddcf;
   font-family: "Poppins", sans-serif;
   height: 100vh;
 }
@@ -29,18 +32,17 @@ main {
 }
 
 .main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 25vw [col-start]);
 }
 
 .card {
+  cursor: none;
   margin: 7px;
   margin-bottom: 3rem;
-  width: calc(33vw - 16px);
+  width: calc(24vw - 16px);
 }
 .card__text {
-  cursor: default;
   padding: 7px;
   display: flex;
   justify-content: space-evenly;
@@ -53,10 +55,9 @@ main {
 }
 
 .card img {
-  cursor: pointer;
   padding: 7px;
-  width: calc(33vw - 16px);
-  border-radius: calc((33vw - 16px) / 2);
+  width: calc(24vw - 16px);
+  border-radius: calc((24vw - 16px) / 2);
   border: 2px solid #779708;
   transition: 0.2s ease-in-out;
 }
@@ -72,21 +73,25 @@ main {
   border: 2px solid #779708;
   background: #ebddcf;
   color: #779708;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
-  cursor: pointer;
   text-align: center;
   appearance: button;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: 0.2s ease-in-out;
+  transform: scale(0.95);
 }
 
 .btn:hover {
   background-color: #637f02;
   border: 2px solid #637f02;
   color: #ebddcf;
+}
+
+.btn:active {
+  transform: scale(0.9);
 }
 
 .btn svg {
@@ -151,6 +156,74 @@ canvas {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.cursor {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 2px solid #637f02;
+  transition: all 200ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%);
+}
+
+.cursor2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #779708;
+  opacity: 0.5;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+}
+
+.hover {
+  background-color: red;
+  opacity: 0.5;
+}
+
+.cursorinnerdown {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+}
+
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #779708;
+  opacity: 0.2;
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #b52034 transparent #b52034 transparent;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

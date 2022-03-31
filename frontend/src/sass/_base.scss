@@ -6,13 +6,15 @@
 *::before {
   margin: 0;
   padding: 0;
+  cursor: none;
   box-sizing: border-box;
   /*  this make the a-inner-links scroll not jump*/
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 body {
-  // background-color: var.$c-light;
+  cursor:none;
+  background-color: var.$c-light;
   font-family: 'Poppins', sans-serif;
   height: 100vh;
 }
@@ -29,7 +31,6 @@ main {
   width: calc(100vw - 16px);
 }
 .main{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 25vw [col-start]);
 }

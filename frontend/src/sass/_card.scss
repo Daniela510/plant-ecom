@@ -1,10 +1,10 @@
 @use "variables" as var;
 .card{
+    cursor: none;
     margin: var.$pad;
     margin-bottom: 3rem;
     width: var.$card-width;
     &__text{
-        cursor:default;
         padding: var.$pad;
         display: flex;
         justify-content: space-evenly;
@@ -17,7 +17,6 @@
     }
 }
 .card img{
-    cursor: pointer;
     padding: var.$pad;;
     width: var.$card-width;
     border-radius: var.$card-img-border;

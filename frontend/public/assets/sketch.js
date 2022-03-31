@@ -3,9 +3,9 @@ let green = 240;
 let gradientVar = 1;
 
 function setup() {
-  let cnv = createCanvas( innerWidth, innerHeight);
+  let cnv = createCanvas( window.innerWidth, window.innerHeight);
   cnv.class('p5-canvas')
-  cnv.parent('main');
+  cnv.parent('root');
   background(235, 221, 207);
 }
 

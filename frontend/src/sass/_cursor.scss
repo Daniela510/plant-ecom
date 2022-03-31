@@ -1,0 +1,36 @@
+@use "variables" as var;
+.cursor {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid var.$c-med-green;
+    transition: all 200ms ease-out;
+    position: fixed;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    transform: translate(calc(-50% + 15px), -50%);
+  }
+  
+  .cursor2 {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var.$c-green;
+    opacity: .5;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width .3s, height .3s, opacity .3s;
+  }
+  
+  .hover {
+    background-color: red;
+    opacity: 0.5;
+  }
+  
+  .cursorinnerdown {
+    width: 50px;
+    height: 50px;
+    opacity: .5;
+  }

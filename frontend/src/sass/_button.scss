@@ -6,20 +6,23 @@
   border: 2px solid var.$c-green;
   background: var.$c-light;
   color: var.$c-green;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
-  cursor: pointer;
   text-align: center;
   appearance: button;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: 0.2s ease-in-out;
+  transform: scale(0.95);
 }
 .btn:hover {
   background-color: var.$c-med-green;
   border: 2px solid var.$c-med-green;
   color: var.$c-light;
+}
+.btn:active{
+  transform: scale(0.9);
 }
 
 .btn svg {
