@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BsDropletFill, BsFillSunFill } from "react-icons/bs";
-import { useEffect } from "react";
 import React from "react";
 
 const Detail = () => {
@@ -13,7 +12,7 @@ const Detail = () => {
   //console.log(targetPlant[0].image);
   return (
     <div className="container">
-      <img src={`/images/${plant.image}`} alt="No image found" />
+      <img src={`/images/${plant.image}`} alt="Not found" />
       <div className="description">
         <h2>{plant.name}</h2>
         <p>{plant.genus}</p>

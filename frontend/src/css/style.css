@@ -114,6 +114,7 @@ main {
 }
 
 .header {
+  z-index: 9;
   width: calc(100vw - 16px);
   position: fixed;
   display: flex;
@@ -159,6 +160,7 @@ canvas {
 }
 
 .cursor {
+  z-index: 11;
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -172,6 +174,7 @@ canvas {
 }
 
 .cursor2 {
+  z-index: 11;
   width: 20px;
   height: 20px;
   border-radius: 100%;
@@ -224,6 +227,50 @@ canvas {
   100% {
     transform: rotate(360deg);
   }
+}
+.row {
+  cursor: none;
+  margin: 7px;
+  margin-bottom: 3rem;
+  width: calc(24vw - 16px);
+}
+.row__text {
+  padding: 7px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.add, .row img {
+  z-index: 0;
+  padding: 7px;
+  width: calc(24vw - 16px);
+  height: calc(24vw - 16px);
+  opacity: 1;
+  border-radius: calc((24vw - 16px) / 2);
+  border: 2px solid #779708;
+  transition: 0.5s ease-in-out;
+}
+
+.row img:hover {
+  opacity: 0.5;
+}
+
+.add {
+  background-color: #779708;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add:hover {
+  opacity: 0.5;
+}
+
+.add p {
+  font-weight: 400;
+  color: #ebddcf;
+  font-size: 4rem;
 }
 
 /*# sourceMappingURL=style.css.map */

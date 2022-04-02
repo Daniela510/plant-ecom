@@ -1,7 +1,6 @@
 import {
   FaSignInAlt,
   FaSignOutAlt,
-  FaUser,
   FaShoppingCart,
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
@@ -23,7 +22,6 @@ function Header() {
         <Link to="/"> Pistache Nursery </Link>
       </div>
       <ul>
-        {user.isAdmin && ( <Link to="/dashboard"> Manage Inventory </Link> )}
         {user ? (
           <li>
             <button className="btn" onClick={onLogout}>
@@ -31,20 +29,17 @@ function Header() {
             </button>
           </li>
         ) : (
-          <>
-            <li>
-              <Link to="/login">
-                <FaSignInAlt /> Login
-              </Link>
-            </li>
-            <li>
-              <Link to="/register">
-                <FaUser /> Register
-              </Link>
-            </li>
-          </>
+          <li>
+            <Link to="/login">
+              <FaSignInAlt /> Login
+            </Link>
+          </li>
         )}
-        <FaShoppingCart />
+        <li>
+          <Link to="/cart">
+            <FaShoppingCart /> Cart
+          </Link>
+        </li>
       </ul>
     </header>
   );

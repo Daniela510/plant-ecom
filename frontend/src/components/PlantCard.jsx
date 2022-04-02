@@ -7,7 +7,7 @@ const PlantCard = ({ plant }) => {
     <div className="card">
       <>
         <Link to={`/detail/${plant.name}`}>
-          <img src={src} alt="No image found" />
+          <img src={src} alt="Not found" />
         </Link>
       </>
       <div className="card__text">

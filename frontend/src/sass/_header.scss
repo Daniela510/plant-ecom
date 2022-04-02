@@ -1,5 +1,6 @@
 @use "variables" as var;
 .header {
+  z-index: 9;
   width: calc(100vw - 16px);
   position: fixed;
     display: flex;

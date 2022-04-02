@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { FaSignInAlt } from "react-icons/fa";
+import { FaSignInAlt, FaUser } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
-import { toast} from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { login, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
 
@@ -11,7 +11,7 @@ function Login() {
     email: "",
     password: "",
   });
-  const { email, password} = formData;
+  const { email, password } = formData;
 
   const nav = useNavigate();
   const dispatch = useDispatch();
@@ -20,33 +20,33 @@ function Login() {
     (state) => state.auth
   );
 
-  useEffect( () => {
+  useEffect(() => {
     if (isError) {
-      toast.error(message)
+      toast.error(message);
     }
-    if(isSuccess || user) {
-      nav('/')
+    if (isSuccess || user) {
+      nav("/");
     }
-    dispatch(reset())
-  }, [user, isError, isSuccess, message, nav, dispatch])
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, nav, dispatch]);
 
   const onChange = (e) => {
-      setFormData((prevState) => ({
-          ...prevState, 
-    [e.target.name]: e.target.value,
-    }))
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
   };
   const onSubmit = (e) => {
-      e.preventDefault()
-      const userData ={
-        email,
-        password,
-      }
-      dispatch(login(userData))
+    e.preventDefault();
+    const userData = {
+      email,
+      password,
+    };
+    dispatch(login(userData));
   };
 
-  if (isLoading){
-    return <Spinner/>
+  if (isLoading) {
+    return <Spinner />;
   }
 
   return (
@@ -82,11 +82,16 @@ function Login() {
             />
           </div>
           <div className="form-group">
-              <button type="submit" className="btn btn-block">
-                  Submit
-              </button>
+            <button type="submit" className="btn btn-block">
+              Login
+            </button>
           </div>
         </form>
+        <Link to="/register">
+          <button className="btn btn-block">
+            <FaUser /> Create an account
+          </button>
+        </Link>
       </section>
     </>
   );
