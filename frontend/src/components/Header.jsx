@@ -1,46 +1,53 @@
-import {FaSignInAlt, FaSignOutAlt, FaUser, FaShoppingCart} from 'react-icons/fa'
-import {Link, useNavigate} from 'react-router-dom'
-import {useSelector, useDispatch} from 'react-redux'
-import {logout, reset} from '../features/auth/authSlice'
+import {
+  FaSignInAlt,
+  FaSignOutAlt,
+  FaUser,
+  FaShoppingCart,
+} from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logout, reset } from "../features/auth/authSlice";
 
 function Header() {
-  const nav = useNavigate()
-  const dispatch = useDispatch()
-  const {user} = useSelector((state) => state.auth)
-  const onLogout = ()=>{
-    dispatch(logout())
-    dispatch(reset())
-    nav('/')
-  }
+  const nav = useNavigate();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
+  const onLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+    nav("/");
+  };
   return (
-    <header className='header'>
-        <div className='logo'> 
-        <Link to='/'> Pistache Nursery </Link>
-        </div>
-        <ul>
-          <li>searchbar</li>
-        </ul>
-        <ul>
-          {user ? (<li>
-          <button className='btn' onClick ={onLogout}>
-          <FaSignOutAlt/> Logout
-          </button>
-      </li>): (<>
+    <header className="header">
+      <div className="logo">
+        <Link to="/"> Pistache Nursery </Link>
+      </div>
+      <ul>
+        {user.isAdmin && ( <Link to="/dashboard"> Manage Inventory </Link> )}
+        {user ? (
           <li>
-          <Link to='/login'> 
-          <FaSignInAlt/> Login
-          </Link>
-      </li>
-      <li>
-          <Link to='/register'> 
-          <FaUser/> Register
-          </Link>
-      </li>
-          </>)}
-          <FaShoppingCart/>
-        </ul>
+            <button className="btn" onClick={onLogout}>
+              <FaSignOutAlt /> Logout
+            </button>
+          </li>
+        ) : (
+          <>
+            <li>
+              <Link to="/login">
+                <FaSignInAlt /> Login
+              </Link>
+            </li>
+            <li>
+              <Link to="/register">
+                <FaUser /> Register
+              </Link>
+            </li>
+          </>
+        )}
+        <FaShoppingCart />
+      </ul>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

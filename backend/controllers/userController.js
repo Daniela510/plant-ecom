@@ -54,7 +54,7 @@ const registerUser = asyncHandler(async (req, res) => {
   res.json({ message: "User is registered" });
 });
 
-// @desc Register new user
+// @desc Login existing user
 // @route POST /api/users/login
 //access Public
 const loginUser = asyncHandler(async (req, res) => {
@@ -66,6 +66,7 @@ const loginUser = asyncHandler(async (req, res) => {
         _id: user.id,
         name: user.name,
         email: user.email,
+        isAdmin: user.isAdmin,
         token: generateToken(user._id, user.isAdmin),
       });
   } else {
