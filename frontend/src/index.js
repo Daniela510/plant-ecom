@@ -25,3 +25,7 @@ serviceWorker.unregister();
 // to get me to work on this
 // tomorrow 
 // what a golden word
+// that green dot is important, to me, so 
+// i should be better. But i had work & class today
+// ugh
+// this loophole is not good
